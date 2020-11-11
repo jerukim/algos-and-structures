@@ -18,6 +18,10 @@ we can improve space complexity by decrementing counter in frequency object and 
 */
 
 function same(a, b) {
+    if (a.length !== b.length) {
+        return false
+    }
+
     const frequency = {}
 
     for (const num of a) {
@@ -34,7 +38,7 @@ function same(a, b) {
     }
 
     for (const num of Object.keys(frequency)) {
-        if (frequency[num] !== frequency[num]) {
+        if (frequency[num] !== 0) {
             return false
         }
     }
@@ -43,19 +47,21 @@ function same(a, b) {
 }
 
 // TEST CASES:
-a = [], b = [] // true
+a = [], b = []
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
-a = [2], b = [4] // true
+a = [], b = []
+console.log(same(a, b) === false ? 'Pass' : 'Fail')
+a = [2], b = [4]
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
 
-a = [1, 2, 3], b = [1, 4, 9] // true
+a = [1, 2, 3], b = [1, 4, 9]
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
-a = [1, 2, 3], b = [4, 9, 1] // true
+a = [1, 2, 3], b = [4, 9, 1]
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
-a = [1, 2, 3], b = [9, 4, 2] // false
+a = [1, 2, 3], b = [9, 4, 2]
 console.log(same(a, b) === false ? 'Pass' : 'Fail')
 
-a = [1, 2, 2, 3], b = [4, 1, 9, 4] // true
+a = [1, 2, 2, 3], b = [4, 1, 9, 4]
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
-a = [1, 2, 2, 3], b = [4, 1, 9, 2] // false
+a = [1, 2, 2, 3], b = [4, 1, 9, 2]
 console.log(same(a, b) === false ? 'Pass' : 'Fail')

@@ -49,7 +49,7 @@ function same(a, b) {
 // TEST CASES:
 a = [], b = []
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
-a = [], b = []
+a = [1], b = []
 console.log(same(a, b) === false ? 'Pass' : 'Fail')
 a = [2], b = [4]
 console.log(same(a, b) === true ? 'Pass' : 'Fail')

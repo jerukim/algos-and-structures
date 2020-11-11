@@ -26,12 +26,12 @@ function same(a, b) {
 
     for (const num of a) {
         const numSquared = num * num
-        frequency[numSquared] = frequency[numSquared]++ || 1
+        frequency[numSquared] = (frequency[numSquared] || 0) + 1
     }
 
     for (const num of b) {
         if (frequency[num]) {
-            frequency[num] = frequency[num]--
+            frequency[num]--
         } else {
             return false
         }

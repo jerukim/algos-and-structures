@@ -44,18 +44,18 @@ function same(a, b) {
 
 // TEST CASES:
 a = [], b = [] // true
-console.log(same(a, b))
+console.log(same(a, b) === true ? 'Pass' : 'Fail')
 a = [2], b = [4] // true
-console.log(same(a, b))
+console.log(same(a, b) === true ? 'Pass' : 'Fail')
 
 a = [1, 2, 3], b = [1, 4, 9] // true
-console.log(same(a, b))
+console.log(same(a, b) === true ? 'Pass' : 'Fail')
 a = [1, 2, 3], b = [4, 9, 1] // true
-console.log(same(a, b))
+console.log(same(a, b) === true ? 'Pass' : 'Fail')
 a = [1, 2, 3], b = [9, 4, 2] // false
-console.log(same(a, b))
+console.log(same(a, b) === false ? 'Pass' : 'Fail')
 
 a = [1, 2, 2, 3], b = [4, 1, 9, 4] // true
-console.log(same(a, b))
+console.log(same(a, b) === true ? 'Pass' : 'Fail')
 a = [1, 2, 2, 3], b = [4, 1, 9, 2] // false
-console.log(same(a, b))
+console.log(same(a, b) === false ? 'Pass' : 'Fail')

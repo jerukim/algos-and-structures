@@ -4,12 +4,15 @@ an anagram is a word, phrase or name formed by rearranging the letters of anothe
 example: 'cinema' can be formed from 'iceman'
 */
 
-/* INPUT: two strings (a, b)
-do we need to worry about phrases with spaces or will it always be a single word
-do we need to worry about special characters?
-how should we handle capital and lower case letters? seperatly or the same?
-*/
+// INPUT: two strings (a, b)
 // OUTPUT: boolean
+
+/* EDGE CASES:
+strings with different lengths
+phrase with spaces
+special characters
+capital and lowercase letters
+*/
 
 function validAnagram(a, b) {
 }

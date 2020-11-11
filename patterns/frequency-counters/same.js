@@ -13,36 +13,28 @@ repeating numbers are possible, frequency must be tracked
 
 // OUTPUT: boolean
 
-// EXAMPLE CASES:
-// a = [], b = [] // true
-// a = [2], b = [4] // true
-
-// a = [1, 2, 3], b = [1, 4, 9] // true
-// a = [1, 2, 3], b = [4, 9, 1] // true
-// a = [1, 2, 3], b = [9, 4, 2] // false
-
-// a = [1, 2, 2, 3], b = [4, 1, 9, 4] // true
-a = [1, 2, 2, 3], b = [4, 1, 9, 2] // false
+/* OPTIMIZATION:
+we can improve space complexity by decrementing counter in frequency object and just verify that each key has a value of 0 instead of comparing values
+*/
 
 function same(a, b) {
-    const frequencyA = {}
-    const frequencyB = {}
+    const frequency = {}
 
     for (const num of a) {
         const numSquared = num * num
-        frequencyA[numSquared] = frequencyA[numSquared]++ || 1
+        frequency[numSquared] = frequency[numSquared]++ || 1
     }
 
     for (const num of b) {
-        if (frequencyA[num]) {
-            frequencyB[num] = frequencyB[num]++ || 1
+        if (frequency[num]) {
+            frequency[num] = frequency[num]--
         } else {
             return false
         }
     }
 
-    for (const num of Object.keys(frequencyA)) {
-        if (frequencyA[num] !== frequencyB[num]) {
+    for (const num of Object.keys(frequency)) {
+        if (frequency[num] !== frequency[num]) {
             return false
         }
     }
@@ -50,4 +42,20 @@ function same(a, b) {
     return true
 }
 
+// TEST CASES:
+a = [], b = [] // true
+console.log(same(a, b))
+a = [2], b = [4] // true
+console.log(same(a, b))
+
+a = [1, 2, 3], b = [1, 4, 9] // true
+console.log(same(a, b))
+a = [1, 2, 3], b = [4, 9, 1] // true
+console.log(same(a, b))
+a = [1, 2, 3], b = [9, 4, 2] // false
+console.log(same(a, b))
+
+a = [1, 2, 2, 3], b = [4, 1, 9, 4] // true
+console.log(same(a, b))
+a = [1, 2, 2, 3], b = [4, 1, 9, 2] // false
 console.log(same(a, b))

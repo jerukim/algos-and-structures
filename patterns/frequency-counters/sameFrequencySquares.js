@@ -30,11 +30,11 @@ function sameFrequencySquares(a, b) {
     }
 
     for (const num of b) {
-        if (frequency[num]) {
-            frequency[num]--
-        } else {
-            return false
-        }
+        frequency[num] = (frequency[num] || 0) - 1
+    }
+
+    for (const num in frequency) {
+        if (frequency[num] !== 0) return false
     }
 
     return true

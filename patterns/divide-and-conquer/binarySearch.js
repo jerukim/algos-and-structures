@@ -25,11 +25,22 @@ function binarySearchIterative(array, value) {
     return -1
 }
 
+function binarySearchRecursive(array, value) {
+
+}
+
 // TEST CASES:
-console.log(binarySearchIterative([], 1) === -1)
-console.log(binarySearchIterative([1], 1) === 0)
-console.log(binarySearchIterative([1, 2, 3], 1) === 0)
-console.log(binarySearchIterative([1, 2, 3], 2) === 1)
-console.log(binarySearchIterative([1, 2, 3, 4, 5, 6], 4) === 3)
-console.log(binarySearchIterative([1, 2, 3, 4, 5, 6], 6) === 5)
-console.log(binarySearchIterative([1, 2, 3, 4, 5, 6], 11) === -1)
+// console.log(binarySearchIterative([], 1) === -1)
+// console.log(binarySearchIterative([1], 1) === 0)
+// console.log(binarySearchIterative([1, 2, 3], 1) === 0)
+// console.log(binarySearchIterative([1, 2, 3], 2) === 1)
+// console.log(binarySearchIterative([1, 2, 3, 4, 5, 6], 4) === 3)
+// console.log(binarySearchIterative([1, 2, 3, 4, 5, 6], 6) === 5)
+// console.log(binarySearchIterative([1, 2, 3, 4, 5, 6], 11) === -1)
+console.log(binarySearchRecursive([], 1) === -1)
+console.log(binarySearchRecursive([1], 1) === 0)
+console.log(binarySearchRecursive([1, 2, 3], 1) === 0)
+console.log(binarySearchRecursive([1, 2, 3], 2) === 1)
+console.log(binarySearchRecursive([1, 2, 3, 4, 5, 6], 4) === 3)
+console.log(binarySearchRecursive([1, 2, 3, 4, 5, 6], 6) === 5)
+console.log(binarySearchRecursive([1, 2, 3, 4, 5, 6], 11) === -1)

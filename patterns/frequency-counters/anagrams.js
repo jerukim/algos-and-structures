@@ -8,13 +8,34 @@ example: 'cinema' can be formed from 'iceman'
 // OUTPUT: boolean
 
 /* EDGE CASES:
-strings with different lengths
-phrase with spaces
-special characters
-capital and lowercase letters
+strings with different lengths > return false
+phrase with spaces > ignore spaces
+special characters and numbers > ignore them completely
+capital and lowercase letters > capital cases should count as lowercase
 */
 
 function validAnagram(a, b) {
+    // return false if string lenghts are not equal
+
+    // create a frequency counter object
+
+    // loop over characters of a
+    // check if that the character is alphabetical
+    // lowercase the character
+    // iterate counter in frequency object for that letter
+
+    // loop over characters of b
+    // check if that the character is alphabetical
+    // lowercase the character
+    // if character exists in frequency
+    // decrement counter in frequency object for that letter
+    // else return false
+
+    // loop over values of frequency object
+    // if value is not 0, return false
+
+    // return true
+
 }
 
 // TEST CASES

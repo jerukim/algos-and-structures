@@ -37,12 +37,6 @@ function same(a, b) {
         }
     }
 
-    for (const num of Object.keys(frequency)) {
-        if (frequency[num] !== 0) {
-            return false
-        }
-    }
-
     return true
 }
 
@@ -65,3 +59,6 @@ a = [1, 2, 2, 3], b = [4, 1, 9, 4]
 console.log(same(a, b) === true ? 'Pass' : 'Fail')
 a = [1, 2, 2, 3], b = [4, 1, 9, 2]
 console.log(same(a, b) === false ? 'Pass' : 'Fail')
+
+console.log(same([1, 2, 3, 4, 2], [1, 4, 9, 16, 1]) === false ? 'Pass' : 'Fail')
+console.log(same([1, 2, 2, 3, 4], [1, 4, 9, 16, 25]) === false ? 'Pass' : 'Fail')

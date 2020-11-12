@@ -52,14 +52,6 @@ function validAnagram(a, b) {
         }
     }
 
-    // loop over values of frequency object
-    for (const characterCount of Object.values(frequency)) {
-        // if value is not 0, return false
-        if (characterCount !== 0) {
-            return false
-        }
-    }
-
     return true
 }
 

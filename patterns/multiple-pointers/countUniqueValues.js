@@ -10,27 +10,26 @@ There can be negative numbers in the array, but it will always be sorted.
 empty array
 */
 
+/* OPTIMIZATION:
+we can improve space complexity by using the array and 'i' to keep track of unique values by:
+iterate i when array[j] is new number and set array[i] to that number
+*/
+
 function countUniqueValues(array) {
-    // create a counter for unqiue values
-    let uniqueValues = 0
-    // create two pointers i and j starting at 0
-    let i = 0, j = 0
+    if (array.length === 0) return 0
 
-    // run a loop while i is less than array.length
-    while (i < array.length) {
-        // iterate counter
-        uniqueValues++
+    let i = 0
 
-        // while array[i] === array[j], iterate j
-        while (array[i] === array[j]) {
-            j++
+    for (let j = 1; j < array.length; j++) {
+
+        if (array[i] !== array[j]) {
+            i++
+            array[i] = array[j]
         }
 
-        // update i to equal j
-        i = j
     }
-    // return counter
-    return uniqueValues
+
+    return i + 1
 }
 
 // TEST CASES:

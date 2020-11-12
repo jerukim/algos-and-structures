@@ -11,7 +11,26 @@ empty array
 */
 
 function countUniqueValues(array) {
+    // create a counter for unqiue values
+    let uniqueValues = 0
+    // create two pointers i and j starting at 0
+    let i = 0, j = 0
 
+    // run a loop while i is less than array.length
+    while (i < array.length) {
+        // iterate counter
+        uniqueValues++
+
+        // while array[i] === array[j], iterate j
+        while (array[i] === array[j]) {
+            j++
+        }
+
+        // update i to equal j
+        i = j
+    }
+    // return counter
+    return uniqueValues
 }
 
 // TEST CASES:
